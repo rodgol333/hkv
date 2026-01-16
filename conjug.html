@@ -362,7 +362,7 @@ function autoTranslate() {
 
   if (translation) {
     console.log('Translation found:', translation);
-    setTimeout(() = >{
+    setTimeout(() => {
       // If multiple options, pick the first one
       const firstOption = translation.split('/')[0];
       input.value = firstOption;
@@ -387,7 +387,7 @@ function autoTranslate() {
 autoTranslate();
 
 // Set up observer to auto-run when page changes
-const observer = new MutationObserver(() = >{
+const observer = new MutationObserver(() => {
   autoTranslate();
 });
 
