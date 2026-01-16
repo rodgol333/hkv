@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conjug Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f8fa;
+        }
+        
+        header {
+            background-color: #4a4a4a;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            color: white;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+        
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .code-container {
+            background-color: white;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 20px;
+        }
+        
+        .code-display {
+            width: 100%;
+            min-height: 500px;
+            background-color: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #24292f;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>conjug</h1>
+    </header>
+    
+    <main>
+        <div class="code-container">
+            <pre class="code-display">// Paste your code here
+// Translation hashtable
+const translations = {
+  '(he/she/it) ìs bald': 'es calva', 'a brother': 'un hermano', 'a sister': 'una hermana', 'accepts me': 'me acepta', 'active': 'activa', 'alone': 'sola', 'always': 'siempre', 'antisocial': 'antisocial', "at my friend's place": 'en la casa de mi amiga', 'at the park': 'en el parque', 'at the restaurant': 'en un restaurante', 'aunt': 'tía', 'big': 'enorme', 'birds': 'las aves', 'blue': 'azul', 'brown': 'café', 'but other people live': 'pero otras personas viven', 'calico': 'cabello tricolor', 'Christmas': 'La Navidad', 'cousin': 'prima', 'curly hair': 'cabello rizado', 'cute': 'bonita', 'do you have __?': '¿tienes __?', 'do you have pets?': '¿tienes alguna mascota?', 'Do you have pets? / Do you have any pets?': '¿Tienes alguna mascota?', 'Do you have siblings?': '¿Tienes hermanos?', 'do you like cats?': '¿te gustan los gatos?', 'Does her/his pet have a name?': '¿Cómo se llama su mascota?', 'Does your friend have pets?': '¿Tiene mascotas tu amiga?', 'Does your pet have a name?': '¿Cómo se llama tu mascota?', 'dogs': 'los perros', 'extroverted, outgoing': 'extrovertida', 'family is __': 'la familia es', 'family is important because __': 'la familia es importante porque', 'father': 'padre', 'frequently': 'frecuentemente', 'Fridays': 'los viernes', 'friends are important because __': 'las amigas son importante porque', 'fun, funny': 'divertida', 'go to the movies': 'ir al cine', 'good': 'buena', 'grandfather': 'abuelito', 'grandmother': 'abuela', 'grandparents': 'abuelitos', 'green': 'verde', 'hamsters': 'los hámsteres', 'Hanukkan': 'Janucá', 'he is artistic': 'él es artístico', "he's my grandfather": 'él es mi abuelito', 'he/she/it has black eyes': 'él tiene los ojos negros', 'he/she/it has long hair': 'él tiene cabello largo', 'helps me': 'me ayuda', 'Her/his pet’s name is': 'El nombre de la mascota de mi amiga es', 'her/his/its name is __': 'él se llama', 'his/her family is': 'su familia es', 'his/her name is __': 'él se llama', 'horses': 'los caballos', 'how frequently you hang out with your friends?': '¿con qué frecuencia sales con tus amigos?', 'How is your family made up?': '¿Cómo está compuesta tu familia?', 'how many people are your family?': '¿cuántas personas hay en tu familia?', 'How old are your parents?': '¿Cuántos años tienen tus padres?', 'How old are your siblings?': '¿Cuántos años tienen tus hermanas?', 'I am an only child': 'soy hija única', 'I have a': 'Tengo un', 'I have a cat?': 'tengo un gatito', 'I have two sisters.': 'Tengo dos hermanas', 'I like to __': 'a mí me gusta', 'I like to hang out with them.': 'a mí me gusta salir con ellos', 'I like to play videogames': 'a mí me gusta jugar a los videojuegos', 'I live with __': 'vivo con', 'I live with my': 'vivo con mi', 'I spend the weekends with my dad/mom': 'paso los fines de semana con mi mamá', 'I walk with my dog': 'camino con mi perro', 'identical twin': 'gemela', "In __ culture, it's common to live with __": 'en la cultura __ es común vivir con', 'introverted, shy': 'introvertida', 'irresponsible': 'irresponsable', 'is nice (to me)': 'es buena (conmigo)', 'Is this your granfather?': '¿es él tu abuelito?', 'lazy': 'floja', 'likeable, pleasent': 'agradable', 'lovely, nice': 'agradable', 'loves me': 'me ama', 'loving, affectionable': 'cariñosa', 'makes me happy': 'me hace feliz', 'medium size': 'mediana', 'mischievous, naughty': 'traviesa', 'Mondays': 'los lunes', 'mother': 'madre', 'my best friend': 'mi mejor amiga', 'My best friend is': 'Mi mejor amiga es', 'My best friend’s name is': 'El nombre de mi mejor amiga es', 'my cat is big': 'mi gata es grande', 'my dad': 'mi papá', 'My dad is # years old.': 'Mi padre tiene # años', 'My dad’s name is': 'El nombre de mi padre es', 'my family is __': 'mi familia es', 'My family is formed by __': 'Mi familia está compuesta por', 'My family is from': 'Mi familia es de', 'my friends are my family': 'mis amigas son mi familia', 'my grandma': 'mi abuela', 'my mom': 'mi mamá', 'My mom is # years old.': 'Mi madre tiene # años', 'My mom, my dad and me.': 'Mi madre, mi padre y yo', 'My mom’s name is': 'El nombre de mi madre es', 'my older sister is important because __': 'mi hermana mayor es importante porque', 'My parents and I are from': 'Mis padres y yo somos de', 'My parents are from __ but I am from...': 'Mis padres son de __ pero yo soy de', 'My pet’s name is': 'El nombre de mi mascota es', 'My siblings are # and # years old.': 'Mis hermanos tienen # y # años', 'My siblings’ names are': 'El nombre de mis hermanas es__ y', 'never': 'nunca', 'New Year': 'Año Nuevo', 'no identical twin': 'melliza', 'no, I do not like fish': 'no, no me gustan los peces', "no, I don't have": 'no, no tengo', "no, I don't have __": 'no, no tengo __', "No, I don't have siblings. I am an only child.": 'No tengo hermanos. Soy hija única', 'No, I don’t have pets but I want it.': 'No tengo mascotas, pero quiero una', 'No, s/he has no pets.': 'No, él no tiene mascota', "no, that's my uncle": 'no, él es mi tío', 'older': 'mayor', "one's parents until you get married": 'los padres hasta casarse', 'only child': 'hija única', 'parents': 'padres', 'patient': 'paciente', 'playful': 'juguetón', 'quiet': 'calmada', 'rabbits': 'los conejos', 'Ramadan': 'Ramadán', 'red hair': 'cabello rojo', 'responsible': 'responsable', 'Saturdays': 'los sábados', 'she is a good mom': 'ella es una buena mamá', 'she is hard worker': 'ella es trabajadora', "she's my grandmother": 'ella es mi abuela', 'She/he is from': 'Él es de', 'she/he is important because s/he __': 'él es importante porque', 'short hair': 'cabello corto', 'siblings': 'hermanas', 'small': 'chiquita', 'smart, intelligent': 'inteligente', 'snakes': 'las serpientes', 'sociable': 'sociable', 'sometimes': 'a veces', 'stepbrother': 'hermanastro', 'stepfather': 'padastro', 'stepmother': 'madrastra', 'stepsister': 'hermanastra', 'straight hair': 'cabello liso', 'supports me': 'me apoya', 'Thanksgiving day': 'Día de Acción de Gracias', 'there are #': 'hay #', 'they are athletic': 'ellas son atléticas', 'they are funny': 'ellas son chistosas', 'they are my cousins': 'ellas son mis primas', 'Thursdays': 'los jueves', 'Tuesdays': 'los martes', 'uncle': 'tío', 'understands me': 'me entiende', 'we all need love': 'todos necesitamos amor', 'we all need someone': 'todos necesitamos a alguien', 'we celebrate at home': 'celebramos en casa', 'we celebrate birthdays': 'celebramos los cumpleaños', 'we chat': 'nosotros platicamos', 'we dance': 'bailamos', 'we eat': 'comemos', 'we eat dinner together': 'cenamos juntos', 'we go to soccer games': 'jugamos al fútbol', 'we go to the mall': 'nosotros vamos al centro comercial', 'we go to the park': 'nosotros vamos al parque', 'we listen to music': 'escuchamos música', 'we play games': 'jugamos juegos', 'we play tennis on Sundays': 'jugamos tenis los domingos', 'we play together': 'jugamos juntos', 'we tell jokes': 'contamos chistes', 'we watch TV': 'miramos televisión', 'Wednesdays': 'los miércoles', 'weekdays': 'entre semana', 'weekends': 'los fines de semana', 'what are your friends': '¿cómo son tus amigas?', "What are your siblings' names?": '¿Cómo se llaman tus hermanos?', 'what do you celebrate with your family?': '¿qué celebras con tu familia?', 'what do you like to do with your family?': '¿qué te gusta hacer con tu familia?', 'what do you like to do with your friends?': '¿qué te gusta hacer con tus amigas?', 'what do you on Thanksgiving?': '¿qué haces en el Día de Acción de Gracias?', 'what do you with your family?': '¿qué haces con tu familia?', 'what do you with your friends on the weekend?': '¿qué haces con tus amigos en el fin de semana?', 'what do you with your pet?': '¿qué haces con tu mascota?', 'What is her/his pet’s name?': '¿Cómo se llama la mascota de tu amiga?', 'what is his/her name?': '¿cómo se llama?', 'What is your best friend’s name?': '¿Cómo se llama tu mejor amiga?', 'what is your bother like?': '¿cómo es tu hermano?', 'what is your cat like?': '¿cómo es tu gato?', "what is your dog's name?": '¿cómo se llama tu perrita?', 'what is your mom like?': '¿cómo es tu madre?', 'What is your parents name?': '¿Cómo se llaman tus padres?', 'What pets do you have?': '¿Qué mascota tienes?', 'when do you play basketball with your friends?': '¿cuándo juegas baloncesto con tus amigos?', 'Where’s your family from?': '¿De dónde es tu familia?', 'Where’s your friend from?': '¿De dónde es tu amiga?', 'white hair': 'cabello blanco', 'Who are the members of your family?': '¿Cómo está compuesta tu familia?', 'who are they?': '¿quiénes son ellas?', 'who do you live with?': '¿con quién vives?', 'who is important to you?': '¿quién es importante para ti?', 'who is that?': '¿quién es él?', 'Who is your best friend?': '¿Quién es tu mejor amiga?', 'why are your brothers/sisters important?': '¿por qué son importantes tus hermanas?', 'why is your brother/sister important?': '¿por qué es importante tu hermana?', 'with their cousins': 'con sus primas', 'yellow': 'amarillo', 'yes, I have __': 'sí, tengo __', 'Yes, I have a pet.': 'Sí, tengo mascotas', 'Yes, I have siblings.': 'Sí, tengo hermanas', 'yes, I like fish': 'Sí me gustan los peces', 'Yes, s/he has': 'Sí, él tiene', "yes, that's my grandmother": 'sí, es mi abuela', 'younger': 'menor', '4th of July': 'El 4 de julio'
+};
+
+// Function to get the question text from the page
+function getQuestionText() {
+  // Try common selectors for question text - adjust these based on your page
+  const selectors = [
+    '.question-text',
+    '[data-question]',
+    'h1',
+    'h2',
+    '.prompt',
+    '[role="heading"]'
+  ];
+  
+  for (let selector of selectors) {
+    const element = document.querySelector(selector);
+    if (element && element.innerText.trim()) {
+      return element.innerText.trim();
+    }
+  }
+  
+  return null;
+}
+
+// Auto-translate and fill function
+function autoTranslate() {
+  const input = document.getElementById('answer-input');
+  if (!input) {
+    console.log('Input field not found');
+    return;
+  }
+  
+  const questionText = getQuestionText();
+  if (!questionText) {
+    console.log('Could not find question text');
+    return;
+  }
+  
+  console.log('Question found:', questionText);
+  
+  // Look up translation (try exact match first, then case-insensitive)
+  let translation = translations[questionText];
+  if (!translation) {
+    const lowerQuestion = questionText.toLowerCase();
+    for (let key in translations) {
+      if (key.toLowerCase() === lowerQuestion) {
+        translation = translations[key];
+        break;
+      }
+    }
+  }
+  
+  if (translation) {
+    console.log('Translation found:', translation);
+    setTimeout(() => {
+      // If multiple options, pick the first one
+      const firstOption = translation.split('/')[0];
+      input.value = firstOption;
+      
+      // Trigger events
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+      
+      console.log('Translation filled:', firstOption);
+    }, 1);
+  } else {
+    console.log('No translation found for:', questionText);
+  }
+}
+
+// Run once immediately
+autoTranslate();
+
+// Set up observer to auto-run when page changes
+const observer = new MutationObserver(() => {
+  autoTranslate();
+});
+
+observer.observe(document.body, { 
+  childList: true, 
+  subtree: true 
+});
+
+console.log('Auto-translator active! Will fill answers after 0.5 seconds.');
+}</pre>
+        </div>
+    </main>
+</body>
+</html>
