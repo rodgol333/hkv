@@ -150,7 +150,7 @@ function stop() {
 }
 
 const notice = document.createElement('div');
-notice.textContent = 'Press Control to Exit';
+notice.textContent = 'Press Escape to Exit';
 notice.style.position = 'fixed';
 notice.style.bottom = '10px';
 notice.style.left = '10px';
@@ -163,7 +163,7 @@ notice.style.borderRadius = '6px';
 document.body.appendChild(notice);
 
 function keyHandler(e) {
-  if (e.key === 'Control') stop();
+  if (e.key === 'Escape') stop();
 }
 
 window.addEventListener('keydown', keyHandler);</pre>
